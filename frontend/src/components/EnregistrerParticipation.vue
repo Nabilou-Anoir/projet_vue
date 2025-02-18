@@ -92,8 +92,6 @@ const successMsg = ref('')
 const chargerPersonnes = async () => {
   try {
     const resp = await axios.get('/api/personnes')
-    // Selon votre API, vous devrez peut-être faire resp.data._embedded.personnes
-    // s'il s'agit de Spring Data REST. Adaptez si besoin :
     personnes.value = resp.data._embedded
       ? resp.data._embedded.personnes
       : resp.data
